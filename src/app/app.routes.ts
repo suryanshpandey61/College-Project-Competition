@@ -5,12 +5,12 @@ import { Projects } from './components/projects/projects';
 import { Register } from './components/register/register';
 import { Students } from './components/students/students';
 import { SubmitProject } from './components/submit-project/submit-project';
+import { Home } from './components/home/home';
 
 export const routes: Routes = [
     {
-        path:'',
-        redirectTo:'home',
-        pathMatch:'full',
+        path:'home',
+        component:Home
     },
     {
         path:'dashboard',
@@ -35,5 +35,14 @@ export const routes: Routes = [
     {
         path:'submit-porject',
         component:SubmitProject
+    },
+    {
+        path:'',
+        redirectTo:'home',
+        pathMatch:'full',
+    },
+    {
+        path:'**',
+        redirectTo:'home'
     }
 ];
