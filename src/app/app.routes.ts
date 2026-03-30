@@ -36,5 +36,4 @@ export const routes: Routes = [
         path:'submit-porject',
         component:SubmitProject
     }
-
 ];

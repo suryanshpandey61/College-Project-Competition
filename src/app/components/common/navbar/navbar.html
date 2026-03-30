@@ -1,0 +1,44 @@
+<nav class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 shadow-lg">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between h-16 items-center">
+
+      <!-- Logo -->
+      <div class="flex items-center space-x-2 text-white text-xl font-bold">
+        <span>🚀</span>
+        <span>Project Competition</span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-6 text-white font-medium">
+        <a routerLink="/" class="hover:text-yellow-300 transition">Home</a>
+        <a routerLink="/dashboard" class="hover:text-yellow-300 transition">Dashboard</a>
+        <a routerLink="/projects" class="hover:text-yellow-300 transition">Projects</a>
+        <a routerLink="/students" class="hover:text-yellow-300 transition">Students</a>
+        <a routerLink="/submit-project" class="hover:text-yellow-300 transition">Submit Project</a>
+        <a routerLink="/login" class="bg-white text-indigo-600 px-3 py-1 rounded-lg hover:bg-gray-200 transition">Login</a>
+        <a routerLink="/register" class="bg-white text-indigo-600 px-3 py-1 rounded-lg hover:bg-gray-200 transition">Register</a>
+      </div>
+
+      <!-- Mobile Button -->
+      <div class="md:hidden">
+        <button (click)="toggleMenu()" class="text-white focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div *ngIf="isOpen" class="md:hidden bg-indigo-700 px-4 pb-4 space-y-2 text-white">
+    <a routerLink="/" class="block hover:text-yellow-300">Home</a>
+    <a routerLink="/dashboard" class="block hover:text-yellow-300">Dashboard</a>
+    <a routerLink="/projects" class="block hover:text-yellow-300">Projects</a>
+    <a routerLink="/students" class="block hover:text-yellow-300">Students</a>
+    <a routerLink="/submit-project" class="block hover:text-yellow-300">Submit Project</a>
+    <a routerLink="/login" class="block hover:text-yellow-300">Login</a>
+    <a routerLink="/register" class="block bg-white text-indigo-600 px-3 py-1 rounded-lg mt-2">Register</a>
+  </div>
+</nav>
