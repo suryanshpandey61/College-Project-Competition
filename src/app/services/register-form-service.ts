@@ -6,6 +6,7 @@ import { inject, Injectable } from '@angular/core';
 })
 export class RegisterFormService {
 
+  //use to call api we use HttpClient
   httpClient = inject(HttpClient)
   
 }
