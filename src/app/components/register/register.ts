@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Register {
 
+  registerForm:any={ 
+  "fullName": "",
+  "email": "",
+  "password": "",
+  "collegeName": "",
+  "role": ""
+  }
+
 }
