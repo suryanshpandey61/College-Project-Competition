@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class RegisterFormService {
 
-  // we use HttpClient
+  // we use HttpClient to call api
   httpClient = inject(HttpClient)
 
   submitUrl='https://api.freeprojectapi.com/api/ProjectCompetition/register';
