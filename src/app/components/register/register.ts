@@ -23,10 +23,12 @@ export class Register {
   onSubmit(){
     this.registerService.onSubmitRegisterForm(this.registerForm).subscribe({
       next:(response)=>{
+        debugger
         console.log("Success -->",response);
         alert("User Registered Successfully")
       },
       error:(err)=>{
+        debugger
         console.log("Error -->",err)
         alert("Error in Registering new User")
       }
