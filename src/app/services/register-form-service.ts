@@ -13,6 +13,7 @@ export class RegisterFormService {
   //url
   submitUrl='https://api.freeprojectapi.com/api/ProjectCompetition/register';
 
+  //method to call api 
   onSubmitRegisterForm(registerForm:any):Observable<any>{
    return this.httpClient.post(this.submitUrl,registerForm);
   }
