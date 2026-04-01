@@ -10,6 +10,7 @@ export class RegisterFormService {
   // we use HttpClient to call api
   httpClient = inject(HttpClient)
 
+  //url
   submitUrl='https://api.freeprojectapi.com/api/ProjectCompetition/register';
 
   onSubmitRegisterForm(registerForm:any):Observable<any>{
