@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { LoginService } from '../../../services/login-service';
 
 @Component({
@@ -16,8 +16,15 @@ export class Navbar {
   // roleId = sessionStorage.getItem('user-id');
 
   loginService = inject(LoginService);  
-
+  router = inject(Router)
   toggleMenu() {
     this.isOpen = !this.isOpen;
   }
+
+  onLogOut(){
+   sessionStorage.removeItem('user-name');
+   sessionStorage.removeItem('user-id');
+   sessionStorage.removeItem('role');
+  }
+
 }
