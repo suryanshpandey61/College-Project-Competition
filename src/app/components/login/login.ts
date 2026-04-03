@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { LoginService } from '../../services/login-service';
 
 @Component({
@@ -20,7 +20,7 @@ export class Login {
   })
 
   loginService = inject(LoginService)
-
+  router = inject(Router)
   
 
   onLogin(){
@@ -30,7 +30,8 @@ export class Login {
         sessionStorage.setItem('role',res.role);
         sessionStorage.setItem('user-id',res.userId);
         sessionStorage.setItem('user-name',res.fullName);
-        alert("User Logged In Successfully")
+        alert("User Logged In Successfully");
+        this.router.navigateByUrl('/home');
       },
       error:()=>{
         debugger
