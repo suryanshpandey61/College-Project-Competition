@@ -34,6 +34,7 @@ export class Navbar implements OnInit {
     this.isOpen = !this.isOpen;
   }
 
+  
   onLogOut(){
    sessionStorage.clear();
    window.dispatchEvent(new Event('user-changed'))
