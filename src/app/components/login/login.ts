@@ -23,7 +23,7 @@ export class Login {
   onLogin(){
     const formValue = this.loginForm.value;
     this.loginService.onUserLogin(formValue).subscribe({
-      next:(res)=>{
+      next:(res:any)=>{
         sessionStorage.setItem('role',res.roleId);
         sessionStorage.setItem('user-id',res.userId);
         sessionStorage.setItem('user-name',res.fullName);
