@@ -10,12 +10,18 @@ import { LoginService } from '../../../services/login-service';
   styleUrl: './navbar.css',
 })
 export class Navbar implements OnInit {
+  userName:string | null = null;
   isOpen = false;
   ngOnInit(): void {
+    this.loadUser();
+    window.addEventListener('user-changed', () => {
+      this.loadUser();
+    });
   }
 
-        userName = sessionStorage.getItem('user-name');
-
+  loadUser(){
+      this.userName = sessionStorage.getItem('user-name');
+  }
   // role = sessionStorage.getItem('role');
   // roleId = sessionStorage.getItem('user-id');
 

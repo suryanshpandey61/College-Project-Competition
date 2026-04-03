@@ -32,6 +32,8 @@ export class Login {
         sessionStorage.setItem('user-name',res.fullName);
         alert("User Logged In Successfully");
         this.router.navigateByUrl('/home');
+        this.loginService.loggedUserId=res.UserId;
+        window.dispatchEvent(new Event('user-changed'));
       },
       error:()=>{
         alert("Wrong Credentials")
