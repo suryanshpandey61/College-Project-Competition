@@ -15,8 +15,11 @@
         <a routerLink="/projects" class="hover:text-yellow-300 transition">Projects</a>
         <a routerLink="/students" class="hover:text-yellow-300 transition">Students</a>
         <a routerLink="/submit-project" class="hover:text-yellow-300 transition">Submit Project</a>
-        <a routerLink="/login" class="bg-white text-indigo-600 px-3 py-1 rounded-lg hover:bg-gray-200 transition">Login</a>
-        <a routerLink="/register" class="bg-white text-indigo-600 px-3 py-1 rounded-lg hover:bg-gray-200 transition">Register</a>
+        @if (loginService.loggedUserId == '') {
+             <a routerLink="/login" class="bg-white text-indigo-600 px-3 py-1 rounded-lg hover:bg-gray-200 transition">Login</a>
+             <a routerLink="/register" class="bg-white text-indigo-600 px-3 py-1 rounded-lg hover:bg-gray-200 transition">Register</a>
+        }
+       
       </div>
 
       <!-- Mobile Button -->
@@ -32,13 +35,16 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div *ngIf="isOpen" class="md:hidden bg-indigo-700 px-4 pb-4 space-y-2 text-white">
-    <a routerLink="/" class="block hover:text-yellow-300">Home</a>
-    <a routerLink="/dashboard" class="block hover:text-yellow-300">Dashboard</a>
-    <a routerLink="/projects" class="block hover:text-yellow-300">Projects</a>
-    <a routerLink="/students" class="block hover:text-yellow-300">Students</a>
-    <a routerLink="/submit-project" class="block hover:text-yellow-300">Submit Project</a>
-    <a routerLink="/login" class="block hover:text-yellow-300">Login</a>
-    <a routerLink="/register" class="block bg-white text-indigo-600 px-3 py-1 rounded-lg mt-2">Register</a>
-  </div>
+   @if (isOpen) {
+      <div class="md:hidden bg-indigo-700 px-4 pb-4 space-y-2 text-white">
+            <a routerLink="/" class="block hover:text-yellow-300">Home</a>
+            <a routerLink="/dashboard" class="block hover:text-yellow-300">Dashboard</a>
+            <a routerLink="/projects" class="block hover:text-yellow-300">Projects</a>
+            <a routerLink="/students" class="block hover:text-yellow-300">Students</a>
+            <a routerLink="/submit-project" class="block hover:text-yellow-300">Submit Project</a>
+            <a routerLink="/login" class="block hover:text-yellow-300">Login</a>
+            <a routerLink="/register" class="block bg-white text-indigo-600 px-3 py-1 rounded-lg mt-2">Register</a>
+         </div>
+   }
+
 </nav>

@@ -11,7 +11,7 @@ import { LoginService } from '../../services/login-service';
 })
 export class Login {
 
-  loggedUserId:string = "";
+  
   //email=suryansh1@gmail.com
   //pass=123@Anshu
   loginForm:FormGroup = new FormGroup({
@@ -21,12 +21,7 @@ export class Login {
 
   loginService = inject(LoginService)
 
-  constructor(){
-    const loggedData = sessionStorage.getItem('user-id')
-    if(loggedData!=null){
-      this.loggedUserId=loggedData;
-    }
-  }
+  
 
   onLogin(){
     const formValue = this.loginForm.value;

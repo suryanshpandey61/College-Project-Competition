@@ -6,8 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class LoginService {
-
+  
+ loggedUserId:string = "";
  private httpClient = inject(HttpClient)
+
+ constructor(){
+    const loggedData = sessionStorage.getItem('user-id')
+    if(loggedData!=null){
+      this.loggedUserId=loggedData;
+    }
+  }
 
  login_url='https://api.freeprojectapi.com/api/ProjectCompetition/login'
 
