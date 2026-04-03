@@ -11,7 +11,7 @@ import { LoginService } from '../../../services/login-service';
 })
 export class Navbar {
   isOpen = false;
-  // userName = sessionStorage.getItem('user-name');
+  userName = sessionStorage.getItem('user-name');
   // role = sessionStorage.getItem('role');
   // roleId = sessionStorage.getItem('user-id');
 

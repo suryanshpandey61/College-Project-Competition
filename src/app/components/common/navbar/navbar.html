@@ -20,8 +20,8 @@
              <a routerLink="/register" class="bg-white text-indigo-600 px-3 py-1 rounded-lg hover:bg-gray-200 transition">Register</a>
         }
         @else{
+            <a class="flex items-center gap-1"><span class="pi pi-user"></span>{{userName}}</a>
             <a routerLink="/logout" class="bg-white text-indigo-600 px-3 py-1 rounded-lg hover:bg-gray-200 transition">LogOut</a>
-            <a href=""></a>
         }
        
       </div>
