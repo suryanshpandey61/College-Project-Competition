@@ -10,4 +10,5 @@ import { Navbar } from "./components/common/navbar/navbar";
 })
 export class App {
   protected title = 'college-competition-project';
+  
 }
