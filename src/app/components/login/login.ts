@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { LoginService } from '../../services/login-service';
 
 @Component({
   selector: 'app-login',
@@ -17,8 +18,18 @@ export class Login {
     password:new FormControl("")
   })
 
-  onLogin(){
+  loginService = inject(LoginService)
 
+  onLogin(){
+    const formValue = this.loginForm.value;
+    this.loginService.onUserLogin(formValue).subscribe({
+      next:(res)=>{
+
+      },
+      error:()=>{
+        
+      }
+    })
   }
 
 }
