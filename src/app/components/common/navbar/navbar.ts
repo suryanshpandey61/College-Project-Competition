@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { LoginService } from '../../../services/login-service';
 
@@ -9,9 +9,13 @@ import { LoginService } from '../../../services/login-service';
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class Navbar {
+export class Navbar implements OnInit {
   isOpen = false;
-  userName = sessionStorage.getItem('user-name');
+  ngOnInit(): void {
+  }
+
+        userName = sessionStorage.getItem('user-name');
+
   // role = sessionStorage.getItem('role');
   // roleId = sessionStorage.getItem('user-id');
 
