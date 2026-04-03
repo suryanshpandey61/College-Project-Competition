@@ -10,6 +10,9 @@ import { RouterLink } from '@angular/router';
 })
 export class Navbar {
   isOpen = false;
+  userName = sessionStorage.getItem('user-name');
+  role = sessionStorage.getItem('role');
+  roleId = sessionStorage.getItem('user-id');
 
   toggleMenu() {
     this.isOpen = !this.isOpen;
