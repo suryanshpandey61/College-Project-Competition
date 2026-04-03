@@ -11,8 +11,8 @@ export class LoginService {
 
  login_url='https://api.freeprojectapi.com/api/ProjectCompetition/login'
 
- onUserLogin():Observable<any>{
-  return this.httpClient
+ onUserLogin(loginObj:any):Observable<any>{
+  return this.httpClient.post(this.login_url,loginObj);
  }
   
 }
