@@ -32,9 +32,8 @@ export class Navbar implements OnInit {
   }
 
   onLogOut(){
-   sessionStorage.removeItem('user-name');
-   sessionStorage.removeItem('user-id');
-   sessionStorage.removeItem('role');
+   sessionStorage.clear();
+   window.dispatchEvent(new Event('user-changed'))
    this.router.navigateByUrl('/home');
   }
 
