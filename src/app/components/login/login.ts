@@ -34,7 +34,6 @@ export class Login {
         this.router.navigateByUrl('/home');
       },
       error:()=>{
-        debugger
         alert("Wrong Credentials")
       }
     })

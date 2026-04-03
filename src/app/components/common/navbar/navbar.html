@@ -21,7 +21,7 @@
         }
         @else{
             <a class="flex items-center gap-1"><span class="pi pi-user"></span>{{userName}}</a>
-            <a (click)="onLogOut()" class="bg-white text-indigo-600 px-3 py-1 rounded-lg hover:bg-gray-200 transition">LogOut</a>
+            <div (click)="onLogOut()" class="bg-white hover:cursor-pointer text-indigo-600 px-3 py-1 rounded-lg hover:bg-gray-200 transition">LogOut</div>
         }
        
       </div>
@@ -46,8 +46,14 @@
             <a routerLink="/projects" class="block hover:text-yellow-300">Projects</a>
             <a routerLink="/students" class="block hover:text-yellow-300">Students</a>
             <a routerLink="/submit-project" class="block hover:text-yellow-300">Submit Project</a>
-            <a routerLink="/login" class="block hover:text-yellow-300">Login</a>
-            <a routerLink="/register" class="block bg-white text-indigo-600 px-3 py-1 rounded-lg mt-2">Register</a>
+           @if (loginService.loggedUserId == '') {
+             <a routerLink="/login" class="bg-white text-indigo-600 px-3 py-1 rounded-lg hover:bg-gray-200 transition">Login</a>
+             <a routerLink="/register" class="bg-white text-indigo-600 px-3 py-1 rounded-lg hover:bg-gray-200 transition">Register</a>
+        }
+        @else{
+            <a class="flex items-center gap-1"><span class="pi pi-user"></span>{{userName}}</a>
+            <div (click)="onLogOut()" class="bg-white hover:cursor-pointer text-indigo-600 px-3 py-1 rounded-lg hover:bg-gray-200 transition">LogOut</div>
+        }
          </div>
    }
 
