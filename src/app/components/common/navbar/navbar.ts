@@ -25,6 +25,7 @@ export class Navbar {
    sessionStorage.removeItem('user-name');
    sessionStorage.removeItem('user-id');
    sessionStorage.removeItem('role');
+   this.router.navigateByUrl('/home');
   }
 
 }
