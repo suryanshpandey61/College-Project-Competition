@@ -21,14 +21,17 @@ export class Login {
   loginService = inject(LoginService)
 
   onLogin(){
+    debugger
     const formValue = this.loginForm.value;
     this.loginService.onUserLogin(formValue).subscribe({
       next:(res)=>{
+        debugger
         alert("User Logged In Successfully")
         console.log(res)
       },
       error:()=>{
-        alert("Error while login:",)
+        debugger
+        alert("Wrong Credentials")
       }
     })
   }
