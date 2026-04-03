@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { LoginService } from '../../../services/login-service';
 
@@ -12,21 +12,24 @@ import { LoginService } from '../../../services/login-service';
 export class Navbar implements OnInit {
   userName:string | null = null;
   isOpen = false;
+
+  loginService = inject(LoginService);
+  router = inject(Router);
+  cdr = inject(ChangeDetectorRef);
+
   ngOnInit(): void {
     this.loadUser();
     window.addEventListener('user-changed', () => {
       this.loadUser();
+      this.cdr.detectChanges();
     });
   }
 
   loadUser(){
-      this.userName = sessionStorage.getItem('user-name');
+    this.userName = sessionStorage.getItem('user-name');
+    this.loginService.loggedUserId = sessionStorage.getItem('user-id') || "";
   }
-  // role = sessionStorage.getItem('role');
-  // roleId = sessionStorage.getItem('user-id');
-
-  loginService = inject(LoginService);  
-  router = inject(Router)
+  
   toggleMenu() {
     this.isOpen = !this.isOpen;
   }
