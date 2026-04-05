@@ -9,6 +9,7 @@ import { LoginService } from '../../../services/login-service';
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
+//navbar 
 export class Navbar implements OnInit {
   userName:string | null = null;
   isOpen = false;
@@ -34,7 +35,7 @@ export class Navbar implements OnInit {
     this.isOpen = !this.isOpen;
   }
 
-  
+
   onLogOut(){
    sessionStorage.clear();
    window.dispatchEvent(new Event('user-changed'))
