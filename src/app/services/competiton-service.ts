@@ -22,5 +22,9 @@ fetchCompetitionDetails():Observable<CompetitonModel[]>{
 deleteCompetiton(id:number){
   return this.httpClient.delete(constant.API_URL+"delete/"+id);
 }
+
+updateCompetition(id:number,obj:CompetitonModel){
+  return this.httpClient.put(constant.API_URL+"update/"+id,obj);
+}
   
 }
