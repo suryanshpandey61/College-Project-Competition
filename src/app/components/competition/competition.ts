@@ -12,4 +12,7 @@ export class Competition {
 
   newObj: CompetitonModel = new CompetitonModel();
 
+  onCreateCompetiton(){
+    
+  }
 } 
