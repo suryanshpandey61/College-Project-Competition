@@ -23,6 +23,7 @@ export class Competition implements OnInit {
     this.competitionService.createCompetition(this.newObj).subscribe({
       next:()=>{
         alert("Competiton Created Successfully")
+        this.getAllCompetitions()
       },
       error:()=>{
         alert("API Error while creating competition")
@@ -45,6 +46,7 @@ export class Competition implements OnInit {
     this.competitionService.deleteCompetiton(id).subscribe({
       next:()=>{
         alert("Successfully Deleted the Competiton")
+        this.getAllCompetitions();
       },
       error:()=>{
         alert("Error while deleting the competition")
