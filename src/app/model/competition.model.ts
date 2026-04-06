@@ -6,4 +6,11 @@ export class CompetitonModel{
   startDate:string,
   endDate:string,
   status:string
+
+  constructor(){
+    this.competitionId=0;
+    this.title='';
+    this.description='';
+  }
+
 }
