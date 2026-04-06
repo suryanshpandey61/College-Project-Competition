@@ -1,11 +1,9 @@
 export class CompetitonModel{
-    {
-  "competitionId": 0,
-  "title": "string",
+
+  competitionId: number,
+  title: "string",
   "description": "string",
   "startDate": "2026-04-06T07:57:33.691Z",
   "endDate": "2026-04-06T07:57:33.691Z",
   "status": "string"
-}
-
 }
