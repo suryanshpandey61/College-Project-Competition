@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CompetitonModel } from '../../model/competition.model';
 
 @Component({
   selector: 'app-competition',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './competition.css',
 })
 export class Competition {
+
+  newObj: CompetitonModel = new CompetitonModel();
 
 }
