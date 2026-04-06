@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { constant } from '../constant/constant';
 
 @Injectable({
   providedIn: 'root',
@@ -11,11 +12,11 @@ export class RegisterFormService {
   httpClient = inject(HttpClient)
 
   //url
-  submitUrl='https://api.freeprojectapi.com/api/ProjectCompetition/register';
+  // submitUrl='https://api.freeprojectapi.com/api/ProjectCompetition/register';
 
   //method to call api for register-form
   onSubmitRegisterForm(registerForm:any):Observable<any>{
-   return this.httpClient.post(this.submitUrl,registerForm);
+   return this.httpClient.post(constant.API_URL+"register",registerForm);
   }
   
 }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { constant } from '../constant/constant';
 
 @Injectable({
   providedIn: 'root',
@@ -17,10 +18,9 @@ export class LoginService {
     }
   }
 
- login_url='https://api.freeprojectapi.com/api/ProjectCompetition/login'
 
  onUserLogin(loginObj:any):Observable<any>{
-  return this.httpClient.post(this.login_url,loginObj);
+  return this.httpClient.post(constant.API_URL+"login",loginObj);
  }
   
 }
