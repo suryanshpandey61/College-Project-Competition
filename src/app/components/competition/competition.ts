@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule } from '@angular/forms';
 import { CompetitonModel } from '../../model/competition.model';
 import { CompetitonService } from '../../services/competiton-service';
 
@@ -19,16 +19,40 @@ export class Competition implements OnInit {
       this.getAllCompetitions();
   }
 
-  onCreateCompetiton(){
+  resetForm(){
+    this.newObj=new CompetitonModel();
+  }
+
+  saveCompetition(){
+   if (this.newObj.competitionId === 0) {
+
+    //  ADD
     this.competitionService.createCompetition(this.newObj).subscribe({
-      next:()=>{
-        alert("Competiton Created Successfully")
+      next: () => {
+        alert("Competition Created");
         this.getAllCompetitions();
+        this.resetForm();
       },
-      error:()=>{
-        alert("API Error while creating competition")
+      error: () => {
+        alert("Error while creating");
       }
-    })
+    });
+
+  } else {
+
+    //  UPDATE
+    this.competitionService.updateCompetition(this.newObj.competitionId, this.newObj).subscribe({
+      next: () => {
+        alert("Competition Updated");
+        this.getAllCompetitions();
+        this.resetForm();
+      },
+      error: () => {
+        alert("Error while updating");
+      }
+    });
+
+  }
   }
 
   getAllCompetitions(){
@@ -65,17 +89,6 @@ export class Competition implements OnInit {
     })
   }
 
-  onEdit(id:number){
-    this.getCompetitionById(id);
-    this.competitionService.updateCompetition(id,this.newObj).subscribe({
-      next:()=>{
-        alert("Successfully updated competition");
-        this.getAllCompetitions();
-      },
-      error:()=>{
-        alert("Error while editing the competition")
-      }
-    })
-  }
+ 
 
 } 

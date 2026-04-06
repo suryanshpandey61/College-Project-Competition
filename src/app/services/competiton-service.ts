@@ -20,7 +20,7 @@ fetchCompetitionDetails():Observable<CompetitonModel[]>{
 }
 
 fetchCompetitionById(id:number):Observable<CompetitonModel>{
-  return this.httpClient.get<CompetitonModel>(constant.API_URL+"/GetAllCompetition/"+id);
+  return this.httpClient.get<CompetitonModel>(constant.API_URL+"competition/"+id);
 }
 
 deleteCompetiton(id:number){
