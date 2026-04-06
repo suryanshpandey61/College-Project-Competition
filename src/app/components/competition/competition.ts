@@ -14,6 +14,13 @@ export class Competition {
   newObj: CompetitonModel = new CompetitonModel();
 
   onCreateCompetiton(){
-
+    this.competitionService.createCompetition(this.newObj).subscribe({
+      next:()=>{
+        alert("Competiton-Created Successfully")
+      },
+      error:()=>{
+        alert("API Error while creating competition")
+      }
+    })
   }
 } 
