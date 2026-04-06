@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { constant } from '../constant/constant';
 import { CompetitonModel } from '../model/competition.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -14,8 +15,8 @@ createCompetition(obj:CompetitonModel){
     return this.httpClient.post(constant.API_URL+"competiton",obj)
 }
 
-fetchCompetitionDetails(){
-    return this.httpClient.get(constant.API_URL+"GetAllCompetition");
+fetchCompetitionDetails():Observable<CompetitonModel[]>{
+    return this.httpClient.get<CompetitonModel[]>(constant.API_URL+"GetAllCompetition");
 }
   
 }
