@@ -41,4 +41,15 @@ export class Competition implements OnInit {
     })
   }
 
+  onDelete(id:number){
+    this.competitionService.deleteCompetiton(id).subscribe({
+      next:()=>{
+        alert("Successfully Deleted the Competiton")
+      },
+      error:()=>{
+        alert("Error while deleting the competition")
+      }
+    })
+  }
+
 } 
