@@ -15,7 +15,7 @@ createCompetition(obj:CompetitonModel){
 }
 
 fetchCompetitionDetails(){
-  
+    return this.httpClient.get(constant.API_URL+"GetAllCompetition");
 }
   
 }
