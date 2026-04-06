@@ -20,7 +20,8 @@
 
         <tbody>
           <!-- Example row -->
-          <tr class="border-b hover:bg-gray-100">
+           @for (item of competitionList; track $index) {
+             <tr class="border-b hover:bg-gray-100">
             <td class="p-2">AI Chatbot</td>
             <td class="p-2">2026-04-01</td>
             <td class="p-2">2026-04-10</td>
@@ -34,6 +35,8 @@
               </button>
             </td>
           </tr>
+           }
+         
         </tbody>
       </table>
 
