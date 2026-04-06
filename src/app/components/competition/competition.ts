@@ -22,7 +22,7 @@ export class Competition implements OnInit {
   onCreateCompetiton(){
     this.competitionService.createCompetition(this.newObj).subscribe({
       next:()=>{
-        alert("Competiton-Created Successfully")
+        alert("Competiton Created Successfully")
       },
       error:()=>{
         alert("API Error while creating competition")

@@ -12,7 +12,7 @@ export class CompetitonService {
   private httpClient = inject(HttpClient);
 
 createCompetition(obj:CompetitonModel){
-    return this.httpClient.post(constant.API_URL+"competiton",obj)
+    return this.httpClient.post(constant.API_URL+"competition",obj)
 }
 
 fetchCompetitionDetails():Observable<CompetitonModel[]>{
