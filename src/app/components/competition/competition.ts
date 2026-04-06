@@ -66,7 +66,16 @@ export class Competition implements OnInit {
   }
 
   onEdit(id:number){
-
+    this.getCompetitionById(id);
+    this.competitionService.updateCompetition(id,this.newObj).subscribe({
+      next:()=>{
+        alert("Successfully updated competition");
+        this.getAllCompetitions();
+      },
+      error:()=>{
+        alert("Error while editing the competition")
+      }
+    })
   }
 
 } 
