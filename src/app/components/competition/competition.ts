@@ -69,6 +69,8 @@ export class Competition implements OnInit {
   getCompetitionById(id:number){
     this.competitionService.fetchCompetitionById(id).subscribe({
       next:(res)=>{
+         res.startDate = this.formatDate(res.startDate);
+      res.endDate = this.formatDate(res.endDate);
         this.newObj=res;
       },
       error:()=>{
