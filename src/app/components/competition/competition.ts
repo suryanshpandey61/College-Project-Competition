@@ -1,8 +1,8 @@
+import { DatePipe } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CompetitonModel } from '../../model/competition.model';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CompetitonService } from '../../services/competiton-service';
-import { DatePipe, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-competition',
