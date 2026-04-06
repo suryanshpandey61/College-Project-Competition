@@ -66,12 +66,17 @@ export class Competition implements OnInit {
     })
   }
 
+  formatDate(date: any): string {
+    if (!date) return '';
+    return date.split('T')[0];
+  }
+
   getCompetitionById(id:number){
     this.competitionService.fetchCompetitionById(id).subscribe({
       next:(res)=>{
          res.startDate = this.formatDate(res.startDate);
-      res.endDate = this.formatDate(res.endDate);
-        this.newObj=res;
+         res.endDate = this.formatDate(res.endDate);
+         this.newObj=res;
       },
       error:()=>{
         alert("Error while fetching competition for requested id")
