@@ -53,36 +53,36 @@
 
         <!-- Title -->
         <div>
-          <label class="block text-sm font-medium text-gray-600">Title</label>
-          <input type="text" [(ngModel)]="newObj.title"
+          <label for="title" class="block text-sm font-medium text-gray-600">Title</label>
+          <input type="text" [(ngModel)]="newObj.title" name="title"
             class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
         </div>
 
         <!-- Start Date -->
         <div>
-          <label class="block text-sm font-medium text-gray-600">Start Date</label>
-          <input type="date" [(ngModel)]="newObj.startDate"
+          <label for="startDate" class="block text-sm font-medium text-gray-600">Start Date</label>
+          <input name="startDate" type="date" [(ngModel)]="newObj.startDate"
             class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
         </div>
 
         <!-- End Date -->
         <div>
-          <label class="block text-sm font-medium text-gray-600">End Date</label>
-          <input type="date" [(ngModel)]="newObj.endDate"
+          <label for="endDate" class="block text-sm font-medium text-gray-600">End Date</label>
+          <input name="endDate" type="date" [(ngModel)]="newObj.endDate"
             class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
         </div>
 
         <!-- Description -->
         <div>
-          <label class="block text-sm font-medium text-gray-600">Description</label>
-          <textarea rows="3" [(ngModel)]="newObj.description"
+          <label for="description" class="block text-sm font-medium text-gray-600">Description</label>
+          <textarea name="description" rows="3" [(ngModel)]="newObj.description"
             class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
         </div>
 
         <!-- Status -->
         <div>
-          <label class="block text-sm font-medium text-gray-600">Status</label>
-          <select [(ngModel)]="newObj.status"
+          <label for="status" class="block text-sm font-medium text-gray-600">Status</label>
+          <select name="status" [(ngModel)]="newObj.status"
             class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none">
             <option value="">Select status</option>
             <option value="INPROGRESS">In Progress</option>
