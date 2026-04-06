@@ -26,11 +26,11 @@ export class Competition {
 
   getAllCompetitions(){
     this.competitionService.fetchCompetitionDetails().subscribe({
-      next:()=>{
-        
+      next:(res)=>{
+        this.competitionList=res;
       },
       error:()=>{
-
+        alert("Error while fetching competition-details")
       }
     })
   }
