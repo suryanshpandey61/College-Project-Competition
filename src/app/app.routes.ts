@@ -6,6 +6,7 @@ import { Register } from './components/register/register';
 import { Students } from './components/students/students';
 import { SubmitProject } from './components/submit-project/submit-project';
 import { Home } from './components/home/home';
+import { Competition } from './components/competition/competition';
 
 export const routes: Routes = [
     {
@@ -35,6 +36,10 @@ export const routes: Routes = [
     {
         path:'submit-porject',
         component:SubmitProject
+    },
+     {
+        path:'competition',
+        component:Competition
     },
     {
         path:'',
