@@ -6,7 +6,7 @@ import { DatePipe, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-competition',
-  imports: [DatePipe, FormsModule, NgClass],
+  imports: [DatePipe, FormsModule],
   templateUrl: './competition.html',
   styleUrl: './competition.css',
 })
@@ -34,7 +34,6 @@ export class Competition implements OnInit {
     this.competitionService.fetchCompetitionDetails().subscribe({
       next:(res)=>{
         this.competitionList=res;
-        console.log("response-from-api--->",res)
       },
       error:()=>{
         alert("Error while fetching competition-details")
