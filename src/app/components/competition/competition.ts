@@ -42,6 +42,17 @@ export class Competition implements OnInit {
     })
   }
 
+  getCompetitionById(id:number){
+    this.competitionService.fetchCompetitionById(id).subscribe({
+      next:(res)=>{
+        this.newObj=res;
+      },
+      error:()=>{
+        alert("Error while fetching competition for requested id")
+      }
+    })
+  }
+
   onDelete(id:number){
     this.competitionService.deleteCompetiton(id).subscribe({
       next:()=>{
@@ -52,6 +63,10 @@ export class Competition implements OnInit {
         alert("Error while deleting the competition")
       }
     })
+  }
+
+  onEdit(id:number){
+
   }
 
 } 
