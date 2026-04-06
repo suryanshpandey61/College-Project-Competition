@@ -12,7 +12,7 @@ import { CompetitonService } from '../../services/competiton-service';
 export class Competition {
   competitionService = inject(CompetitonService)
   newObj: CompetitonModel = new CompetitonModel();
-
+  competitionList:CompetitonModel [] = [];
   onCreateCompetiton(){
     this.competitionService.createCompetition(this.newObj).subscribe({
       next:()=>{
@@ -23,4 +23,16 @@ export class Competition {
       }
     })
   }
+
+  getAllCompetitions(){
+    this.competitionService.fetchCompetitionDetails().subscribe({
+      next:()=>{
+        
+      },
+      error:()=>{
+
+      }
+    })
+  }
+
 } 
