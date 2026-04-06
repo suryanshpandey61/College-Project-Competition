@@ -77,7 +77,7 @@ export class Competition implements OnInit {
          res.startDate = this.formatDate(res.startDate);
          res.endDate = this.formatDate(res.endDate);
          this.newObj=res;
-      },
+      },  
       error:()=>{
         alert("Error while fetching competition for requested id")
       }
