@@ -51,7 +51,7 @@ export class SubmitProject implements OnInit {
         alert("Successfully Submitted Project ")
       },
       error:()=>{
-        alert()
+        alert("Error while submitted Project")
       }
     })
   }
