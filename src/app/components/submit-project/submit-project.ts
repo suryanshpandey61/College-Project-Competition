@@ -49,6 +49,7 @@ export class SubmitProject implements OnInit {
     this.competitionService.submitProject(this.projectObj).subscribe({
       next:()=>{
         alert("Successfully Submitted Project ")
+        console.log("PRoject--->",this.projectObj);
       },
       error:()=>{
         alert("Error while Submitted Project")
