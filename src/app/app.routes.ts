@@ -7,6 +7,7 @@ import { Students } from './components/students/students';
 import { SubmitProject } from './components/submit-project/submit-project';
 import { Home } from './components/home/home';
 import { Competition } from './components/competition/competition';
+import { authGuard } from './gaurds/auth-guard';
 
 export const routes: Routes = [
     {
@@ -39,7 +40,8 @@ export const routes: Routes = [
     },
      {
         path:'competition',
-        component:Competition
+        component:Competition,
+        canActivate:[authGuard]
     },
     {
         path:'',
