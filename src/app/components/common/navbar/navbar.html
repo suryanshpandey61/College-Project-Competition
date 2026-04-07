@@ -11,12 +11,7 @@
       <!-- Desktop Menu -->
       <div class="hidden md:flex space-x-6 text-white font-medium">
         <a routerLink="/" class="hover:text-yellow-300 transition">Home</a>
-        <a routerLink="/dashboard" class="hover:text-yellow-300 transition">Dashboard</a>
-        <a routerLink="/projects" class="hover:text-yellow-300 transition">Projects</a>
         <a routerLink="/competition" class="hover:text-yellow-300 transition">Competition</a>
-
-        <a routerLink="/students" class="hover:text-yellow-300 transition">Students</a>
-        <a routerLink="/submit-project" class="hover:text-yellow-300 transition">Submit Project</a>
         @if (!loginService.loggedUserId) {
              <a routerLink="/login" class="bg-white text-indigo-600 px-3 py-1 rounded-lg hover:bg-gray-200 transition">Login</a>
              <a routerLink="/register" class="bg-white text-indigo-600 px-3 py-1 rounded-lg hover:bg-gray-200 transition">Register</a>
