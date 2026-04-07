@@ -3,11 +3,11 @@ import { Footer } from '../common/footer/footer';
 import { CompetitonService } from '../../services/competiton-service';
 import { Observable } from 'rxjs';
 import { CompetitonModel } from '../../model/competition.model';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, DatePipe, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [Footer,AsyncPipe],
+  imports: [Footer,AsyncPipe,DatePipe,NgClass],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
