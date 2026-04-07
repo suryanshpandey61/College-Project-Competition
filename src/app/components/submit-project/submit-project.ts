@@ -22,7 +22,7 @@ export class SubmitProject implements OnInit {
   }
 
   ngOnInit(): void {
-      
+      this.getCompetitionById();
   }
 
   getCompetitionById(){
