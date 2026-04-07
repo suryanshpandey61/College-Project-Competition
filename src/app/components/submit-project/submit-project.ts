@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CompetitonService } from '../../services/competiton-service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './submit-project.html',
   styleUrl: './submit-project.css',
 })
-export class SubmitProject {
+export class SubmitProject implements OnInit {
 
 
   competitionService = inject(CompetitonService)
@@ -18,5 +18,7 @@ export class SubmitProject {
       this.currentCompetitionId=res.id
     })
   }
+
+
 
 }
