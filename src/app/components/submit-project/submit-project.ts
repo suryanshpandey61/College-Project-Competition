@@ -3,6 +3,7 @@ import { CompetitonService } from '../../services/competiton-service';
 import { ActivatedRoute } from '@angular/router';
 import { CompetitonModel } from '../../model/competition.model';
 import { DatePipe } from '@angular/common';
+import { ProjectSubmissionModel } from '../../model/project-submission.model';
 
 @Component({
   selector: 'app-submit-project',
@@ -16,6 +17,8 @@ export class SubmitProject implements OnInit {
   competitionService = inject(CompetitonService)
   currentCompetitionId:number=0;
   currentCompetitonData:CompetitonModel= new CompetitonModel();
+  projectObj:ProjectSubmissionModel = new ProjectSubmissionModel();
+
   constructor(private activatedRoute:ActivatedRoute){
     this.activatedRoute.params.subscribe((res:any)=>{
       this.currentCompetitionId=res.id
@@ -39,7 +42,7 @@ export class SubmitProject implements OnInit {
   }
 
   submitProject(){
-    
+
   }
 
 }
