@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CompetitonService } from '../../services/competiton-service';
 import { ActivatedRoute } from '@angular/router';
+import { CompetitonModel } from '../../model/competition.model';
 
 @Component({
   selector: 'app-submit-project',
@@ -13,6 +14,7 @@ export class SubmitProject implements OnInit {
 
   competitionService = inject(CompetitonService)
   currentCompetitionId:number=0;
+  currentCompetitonData:CompetitonModel= new CompetitonModel();
   constructor(private activatedRoute:ActivatedRoute){
     this.activatedRoute.params.subscribe((res:any)=>{
       this.currentCompetitionId=res.id
@@ -23,6 +25,10 @@ export class SubmitProject implements OnInit {
       
   }
 
-  
+  getCompetitionById(){
+    this.competitionService.fetchCompetitionById(this.currentCompetitionId).subscribe({
+      
+    })
+  }
 
 }
