@@ -36,7 +36,8 @@ export const routes: Routes = [
     },
     {
         path:'submit-project/:id',
-        component:SubmitProject
+        component:SubmitProject,
+        canActivate:[authGuard]
     },
      {
         path:'competition',

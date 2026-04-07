@@ -11,7 +11,7 @@
       <!-- Desktop Menu -->
       <div class="hidden md:flex space-x-6 text-white font-medium">
         <a routerLink="/" class="hover:text-yellow-300 transition">Home</a>
-        @if(loggedUserId){
+        @if(userId){
           <a routerLink="/competition" class="hover:text-yellow-300 transition">Competition</a>
         }
         @if (!loginService.loggedUserId) {

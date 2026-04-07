@@ -29,7 +29,7 @@ export class Navbar implements OnInit {
 
   loadUser(){
     this.userName = sessionStorage.getItem('user-name');
-    this.userId = sessionStorage
+    this.userId = Number(sessionStorage.getItem('user-id'))
     this.loginService.loggedUserId = sessionStorage.getItem('user-id') || "";
   }
   
