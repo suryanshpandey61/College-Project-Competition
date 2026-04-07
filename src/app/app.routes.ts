@@ -34,7 +34,7 @@ export const routes: Routes = [
         component:Students
     },
     {
-        path:'submit-porject',
+        path:'submit-project',
         component:SubmitProject
     },
      {
