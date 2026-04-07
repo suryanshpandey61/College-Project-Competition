@@ -14,7 +14,9 @@ export class SubmitProject {
   competitionService = inject(CompetitonService)
   currentCompetitionId:number=0;
   constructor(private activatedRoute:ActivatedRoute){
-    
+    this.activatedRoute.params.subscribe((res:any)=>{
+      this.currentCompetitionId=res.id
+    })
   }
 
 }
