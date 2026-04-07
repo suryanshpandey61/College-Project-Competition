@@ -19,6 +19,7 @@ export class SubmitProject implements OnInit {
   currentCompetitionId:number=0;
   currentCompetitonData:CompetitonModel= new CompetitonModel();
   projectObj:ProjectSubmissionModel = new ProjectSubmissionModel();
+  userId:number=0;
 
   constructor(private activatedRoute:ActivatedRoute){
     this.activatedRoute.params.subscribe((res:any)=>{
@@ -43,7 +44,11 @@ export class SubmitProject implements OnInit {
   }
 
   submitProject(){
-
+    this.projectObj.userId = Number(sessionStorage.getItem('user-id'));
+    this.projectObj.competitionId = this.currentCompetitionId;
+    this.competitionService.submitProject(this.projectObj).subscribe({
+      next:()
+    })
   }
 
 }
