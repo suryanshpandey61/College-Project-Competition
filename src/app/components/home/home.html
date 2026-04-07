@@ -8,6 +8,42 @@
       <button class="bg-yellow-400 text-black px-6 py-2 rounded-lg font-semibold hover:bg-yellow-300">Submit Project</button>
       <button class="border border-white px-6 py-2 rounded-lg hover:bg-white hover:text-indigo-600">Explore Projects</button>
     </div>
+   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+  @for (item of competitionList$ | async; track $index) {
+
+    <div class="bg-white rounded-xl shadow p-3 hover:shadow-md transition">
+      
+      <h3 class="text-sm font-semibold text-gray-800 truncate">
+        {{item.title}}
+      </h3>
+
+      <p class="text-xs text-gray-500 mt-1">
+        {{item.startDate | date:'dd MMM'}} - {{item.endDate | date:'dd MMM'}}
+      </p>
+
+      <span class="inline-block mt-2 px-2 py-0.5 text-xs rounded-full font-medium"
+        [ngClass]="{
+          'bg-blue-100 text-blue-600': item.status === 'UPCOMING',
+          'bg-green-100 text-green-600': item.status === 'INPROGRESS',
+          'bg-gray-200 text-gray-600': item.status === 'CLOSED'
+        }">
+        {{item.status}}
+      </span>
+
+      <div class="flex justify-end gap-2 mt-3">
+        <button (click)="getCompetitionById(item.competitionId)"
+          class="text-yellow-500 text-sm">✏️</button>
+
+        <button (click)="onDelete(item.competitionId)"
+          class="text-red-500 text-sm">🗑️</button>
+      </div>
+
+    </div>
+
+  }
+
+</div>
   </section>
 
   <!-- Features Section -->

@@ -3,10 +3,11 @@ import { Footer } from '../common/footer/footer';
 import { CompetitonService } from '../../services/competiton-service';
 import { Observable } from 'rxjs';
 import { CompetitonModel } from '../../model/competition.model';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [Footer],
+  imports: [Footer,AsyncPipe],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
