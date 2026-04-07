@@ -2,10 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CompetitonService } from '../../services/competiton-service';
 import { ActivatedRoute } from '@angular/router';
 import { CompetitonModel } from '../../model/competition.model';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-submit-project',
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './submit-project.html',
   styleUrl: './submit-project.css',
 })
@@ -35,6 +36,10 @@ export class SubmitProject implements OnInit {
       }
 
     })
+  }
+
+  submitProject(){
+    
   }
 
 }

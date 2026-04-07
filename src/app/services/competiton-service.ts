@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { constant } from '../constant/constant';
 import { CompetitonModel } from '../model/competition.model';
 import { Observable } from 'rxjs';
+import { ProjectSubmissionModel } from '../model/project-submission.model';
 
 @Injectable({
   providedIn: 'root',
@@ -29,6 +30,10 @@ deleteCompetiton(id:number){
 
 updateCompetition(id:number,obj:CompetitonModel){
   return this.httpClient.put(constant.API_URL+"update/"+id,obj);
+}
+
+submitProject(obj:ProjectSubmissionModel){
+  return this.httpClient
 }
   
 }
