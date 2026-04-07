@@ -31,7 +31,7 @@ export class SubmitProject implements OnInit {
         this.currentCompetitonData=res
       },
       error:(error)=>{
-        alert("Error while fetching")
+        alert("Error while fetching competiton details by id")
       }
 
     })
