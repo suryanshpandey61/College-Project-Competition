@@ -4,10 +4,11 @@ import { CompetitonService } from '../../services/competiton-service';
 import { Observable } from 'rxjs';
 import { CompetitonModel } from '../../model/competition.model';
 import { AsyncPipe, DatePipe, NgClass } from '@angular/common';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-home',
-  imports: [Footer,AsyncPipe,DatePipe,NgClass],
+  imports: [Footer, AsyncPipe, DatePipe, NgClass, RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
