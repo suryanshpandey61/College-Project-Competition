@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Footer } from '../common/footer/footer';
+import { CompetitonService } from '../../services/competiton-service';
 
 @Component({
   selector: 'app-home',
@@ -9,4 +10,5 @@ import { Footer } from '../common/footer/footer';
 })
 export class Home {
    title = 'College Project Competition';
+   src = inject(CompetitonService)
 }
