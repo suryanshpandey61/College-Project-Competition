@@ -13,6 +13,7 @@ import { LoginService } from '../../../services/login-service';
 export class Navbar implements OnInit {
   userName:string | null = null;
   isOpen = false;
+  userId:number=0;
 
   loginService = inject(LoginService);
   router = inject(Router);
@@ -28,6 +29,7 @@ export class Navbar implements OnInit {
 
   loadUser(){
     this.userName = sessionStorage.getItem('user-name');
+    this.userId = sessionStorage
     this.loginService.loggedUserId = sessionStorage.getItem('user-id') || "";
   }
   
