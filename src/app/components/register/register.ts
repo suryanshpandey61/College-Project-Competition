@@ -10,7 +10,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './register.css',
 })
 export class Register {
-
+  
   registerForm:any={ 
   "fullName": "",
   "email": "",
