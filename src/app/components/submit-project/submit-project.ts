@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CompetitonService } from '../../services/competiton-service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-submit-project',
@@ -9,6 +10,11 @@ import { CompetitonService } from '../../services/competiton-service';
 })
 export class SubmitProject {
 
+  
   competitionService = inject(CompetitonService)
+
+  constructor(private activatedRoute:ActivatedRoute){
+
+  }
 
 }
