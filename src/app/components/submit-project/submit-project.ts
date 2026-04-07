@@ -10,11 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SubmitProject {
 
-  
+
   competitionService = inject(CompetitonService)
-
+  currentCompetitionId:number=0;
   constructor(private activatedRoute:ActivatedRoute){
-
+    
   }
 
 }
