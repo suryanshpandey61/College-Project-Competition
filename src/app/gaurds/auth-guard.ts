@@ -6,6 +6,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   const userId = sessionStorage.getItem('user-id');
    if(userId) return true
    else{
-   
+    router.navigateByUrl(['/login'])
+    retur
    }
 };
