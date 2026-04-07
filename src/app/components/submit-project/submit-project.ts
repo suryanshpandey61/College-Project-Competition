@@ -27,7 +27,13 @@ export class SubmitProject implements OnInit {
 
   getCompetitionById(){
     this.competitionService.fetchCompetitionById(this.currentCompetitionId).subscribe({
-      
+      next:(res)=>{
+        this.currentCompetitonData=res
+      },
+      error:(error)=>{
+        alert("Error while fetching")
+      }
+
     })
   }
 
