@@ -33,7 +33,7 @@ updateCompetition(id:number,obj:CompetitonModel){
 }
 
 submitProject(obj:ProjectSubmissionModel){
-  return this.httpClient
+  return this.httpClient.post(constant.API_URL+"project",obj)
 }
   
 }
