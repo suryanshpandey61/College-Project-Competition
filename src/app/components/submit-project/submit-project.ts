@@ -47,7 +47,12 @@ export class SubmitProject implements OnInit {
     this.projectObj.userId = Number(sessionStorage.getItem('user-id'));
     this.projectObj.competitionId = this.currentCompetitionId;
     this.competitionService.submitProject(this.projectObj).subscribe({
-      next:()
+      next:()=>{
+        alert("Successfully Submitted Project ")
+      },
+      error:()=>{
+        alert()
+      }
     })
   }
 
