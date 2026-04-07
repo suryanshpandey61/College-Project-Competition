@@ -15,5 +15,9 @@ export class Home {
    src = inject(CompetitonService);
 
    competitionList$:Observable<CompetitonModel[]> = new Observable<CompetitonModel[]>
-   
+
+   constructor(){
+    
+   }
+
 }
