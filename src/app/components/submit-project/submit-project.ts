@@ -2,13 +2,13 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CompetitonService } from '../../services/competiton-service';
 import { ActivatedRoute } from '@angular/router';
 import { CompetitonModel } from '../../model/competition.model';
-import { DatePipe } from '@angular/common';
+import { DatePipe, NgClass } from '@angular/common';
 import { ProjectSubmissionModel } from '../../model/project-submission.model';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-submit-project',
-  imports: [DatePipe,FormsModule],
+  imports: [DatePipe, FormsModule, NgClass],
   templateUrl: './submit-project.html',
   styleUrl: './submit-project.css',
 })
