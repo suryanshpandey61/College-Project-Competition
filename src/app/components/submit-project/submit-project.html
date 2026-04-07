@@ -18,15 +18,15 @@
 
         <!-- Description -->
         <div>
-          <label class="text-sm text-gray-600">Description</label>
-          <textarea rows="3"  name="description"
+          <label for="description" class="text-sm  text-gray-600">Description</label>
+          <textarea rows="3" [(ngModel)]="projectObj.description" name="description"
             class="w-full mt-1 px-3 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400 outline-none"></textarea>
         </div>
 
         <!-- GitHub Link -->
         <div>
-          <label class="text-sm text-gray-600">GitHub Link</label>
-          <input type="url"  name="githubLink"
+          <label for="githubLink" class="text-sm text-gray-600">GitHub Link</label>
+          <input type="url"  name="githubLink" [(ngModel)]="projectObj.githubLink"
             class="w-full mt-1 px-3 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-400 outline-none">
         </div>
 
