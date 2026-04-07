@@ -17,7 +17,7 @@ export class Home {
    competitionList$:Observable<CompetitonModel[]> = new Observable<CompetitonModel[]>
 
    constructor(){
-    
+    this.competitionList$=this.src.fetchCompetitionDetails();
    }
 
 }
