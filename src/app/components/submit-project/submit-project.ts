@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CompetitonService } from '../../services/competiton-service';
 
 @Component({
   selector: 'app-submit-project',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './submit-project.css',
 })
 export class SubmitProject {
+
+  competitionService = inject(CompetitonService)
 
 }
